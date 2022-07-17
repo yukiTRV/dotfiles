@@ -1,0 +1,13 @@
+#!/bin/bash
+
+function powermenu {
+    options="Shutdown\nReboot"
+    selected=$(echo -e $options | dmenu -i -l 20 -p 'Choose an option:' -fn 'JetBrainsMono Nerd Font:style:medium:size=10' -nb '#222222' -nf '#bbbbbb' -sb '#36086e' -sf '#eeeeee')
+    if [[ $selected = Shutdown ]]; then
+        systemctl poweroff
+    elif [[ $selected = Reboot ]]; then
+        systemctl reboot  
+    fi
+  }
+
+powermenu

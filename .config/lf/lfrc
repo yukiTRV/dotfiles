@@ -1,0 +1,71 @@
+##### BASIC VARS ####
+
+set shell zsh
+set icons true
+set info size
+set previewer ~/.config/lf/preview
+set cleaner ~/.config/lf/cleaner
+set dircounts
+set ifs "\n"
+set scrolloff 10
+
+#### CMD / FUNCTIONS ####
+
+cmd open ${{
+    test -L $f && f=$(readlink -f $f)
+    case $(file --mime-type $f -b) in
+        text/*) $EDITOR $fx;;
+        *) for f in $fx; do xdg-open $f > /dev/null 2> /dev/null & done;;
+    esac
+}}
+
+cmd mkdir ${{
+  printf "Directory Name: "
+  read ans
+  mkdir $ans
+}}
+
+cmd mkfile ${{
+  printf "File Name: "
+  read ans
+  $EDITOR $ans
+}}
+
+cmd copyimage ${{
+  xclip -selection clipboard -t image/png -i $fx 
+}}
+
+#### REMOVE DEFAULT BINDINGS ####
+
+map m
+map o
+map n
+map "'"
+map '"'
+map d
+map gg
+map i
+
+#### BINDINGS ####
+
+map . set hidden!
+map DD delete
+map p paste
+map x cut
+map y copy
+map <enter> open
+map R reload
+map md mkdir
+map mf mkfile
+map C clear
+map b $vidir
+map i copyimage
+
+#### MOVEMENT ####
+map gh cd ~/
+map gd cd ~/Downloads
+map gc cd ~/.config
+
+
+
+

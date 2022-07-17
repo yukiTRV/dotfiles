@@ -1,0 +1,27 @@
+# Status bar
+dwmblocks &
+
+# Make keyboard cursor go faster 
+xset r rate 210 40
+
+# Monitor config
+xrandr --output DP-0 --mode 1920x1080 --left-of HDMI-0 --mode 1920x1080
+
+# Disable screen saving
+xset s off
+xset -dpms
+xset s noblank
+
+# Set environment variables
+export EDITOR="nvim"
+export TERMINAL="alacritty"
+export BROWSER="firefox"
+
+# Polkit agent
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+# Wallpaper
+xwallpaper --zoom .config/wallpaper.jpg
+
+# Set keyboard
+setxkbmap -layout us -variant intl

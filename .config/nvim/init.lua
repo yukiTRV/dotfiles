@@ -1,3 +1,4 @@
+-- this nvim config was made by chris@machine
 require "user.options"
 require "user.keymaps"
 require "user.plugins"

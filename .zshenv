@@ -10,3 +10,4 @@ export LESSHITSFILE=-
 
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
 export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
+export PYTHONHISTFILE=-

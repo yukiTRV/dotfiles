@@ -28,10 +28,10 @@ local filetype = {
   icons_enabled = false,
 }
 
-local location = {
-  "location",
-  padding = 0,
-}
+-- local location = {
+--   "location",
+--   padding = 0,
+-- }
 
 local spaces = function()
   return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")

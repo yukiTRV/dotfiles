@@ -18,8 +18,8 @@ local diagnostics = {
 
 local diff = {
   "diff",
-  colored = false,
-  symbols = { added = "", modified = "", removed = "" }, -- changes diff symbols
+  colored = true,
+  symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
   cond = hide_in_width,
 }
 
@@ -41,7 +41,7 @@ lualine.setup {
   options = {
     globalstatus = true,
     icons_enabled = true,
-    theme = "auto",
+    theme = "codedark",
     component_separators = { left = "", right = "" },
     section_separators = { left = "", right = "" },
     disabled_filetypes = { "alpha", "dashboard" },
@@ -52,7 +52,7 @@ lualine.setup {
     lualine_b = {"branch"},
     lualine_c = { diagnostics },
     lualine_x = { diff, spaces, "encoding", filetype },
-    lualine_y = { location },
+    lualine_y = { },
     lualine_z = { "progress" },
   },
 }
